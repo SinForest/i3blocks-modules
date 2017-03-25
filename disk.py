@@ -9,6 +9,13 @@ import os
 import re
 import commands
 
+disk = commands.getstatusoutput('lsblk | grep " /$"')[1].split('\n')[0]
+match = re.search("sd\w\d", disk)
+if match:
+	disk = match.group(0)
+else:
+	disk = "sda1"
+
 res = commands.getstatusoutput("df -h | grep /dev/sdb3")[1]
 rx = "\/dev\/sdb3\s+\d+\w\s+\d+,?\d*\w+\s+(\d+\w)\s+(\d+)%"
 match = re.search(rx, res)
