@@ -16,7 +16,7 @@ if match:
 else:
 	disk = "sda1"
 
-res = commands.getstatusoutput("df -h | grep /dev/sdb3")[1]
+res = commands.getstatusoutput("df -h | grep /dev/{}".format(disk))[1]
 rx = "\/dev\/sdb3\s+\d+\w\s+\d+,?\d*\w+\s+(\d+\w)\s+(\d+)%"
 match = re.search(rx, res)
 
