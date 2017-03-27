@@ -1,6 +1,10 @@
 #!/usr/bin/python2
 # coding=UTF-8
 
+####
+# Author: Anita Ullrich
+####
+
 ########################
 #INFORMATION FOR THE DATABASE: (pgadminIII)
 #Neue Login-Rolle: 'user' mit Passwort: 'p4ssw9rd'
